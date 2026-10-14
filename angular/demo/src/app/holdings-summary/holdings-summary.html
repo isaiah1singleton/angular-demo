@@ -1,0 +1,17 @@
+<p>holdings-summary works!</p>
+
+<ul>
+    @for (holding of holdings(); track holding.ticker) {
+        <li>
+            {{holding.ticker }} - {{holding.quantity}}
+            <button (click)="removeHolding(holding.ticker)">
+                Remove
+            </button>
+        </li> 
+    }@empty{
+        <li>No holdings.</li>
+    }
+</ul>
+
+<p>Total: {{totalValue() | number: '12.12'}}</p>
+<button (click)="addHolding()">Add PUCK</button>

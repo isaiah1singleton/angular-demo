@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changable title!</title>
+    <style></style>
+</head>
+<body>
+    <p id="change-text">Changable text!</p>
+    <button onclick="change()">Change text to bold</button>
+    <button onclick="clearToken()">Remove token from localStorage</button>
+    <script id="change-to-bold">
+        let arr = [5, 10, 15, 20, 25];
+        for (let num of arr){
+            console.log(num*num);
+        }
+        function change(){
+            let ele = document.getElementById("change-text");
+            console.log(ele);
+            ele.innerHTML = "<b>Text is now bold!</b>";
+            let btn = document.createElement('button');
+            btn.innerHTML = 'click';
+            document.body.appendChild(btn);
+            window.localStorage.setItem("token", 'token-value');
+        }
+        function clearToken(){
+            localStorage.removeItem("token");
+        }
+    </script>
+</body>
+</html>
